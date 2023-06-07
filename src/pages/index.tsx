@@ -1,9 +1,6 @@
+import { Header } from 'components/header'
+import { MainBanner } from 'components/main-banner'
 import Head from 'next/head'
-import styled from "styled-components"
-
-const Title = styled.h1`
-  color: ${(props) => props.theme.colors.primary};
-`
 
 export default function Home() {
   return (
@@ -15,7 +12,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Title>Hello nextjs</Title>
+        <Header />
+        <MainBanner />
       </main>
     </>
   )

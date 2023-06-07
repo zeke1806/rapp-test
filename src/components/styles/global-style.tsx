@@ -26,15 +26,27 @@ export const GlobalStyle = createGlobalStyle`
     src: url('/fonts/MarkOT.otf') format(opentype);
   }
 
+  ol {
+    margin: 0;
+  }
+
   body {
     margin: 0;
     padding: 0;
     font-family: 'MarkOT-Regular';
   }
 
-  p {
+  p, span {
     margin: 0;
     padding: 0;
     font-size: 16px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: lighter;
+    color: ${props => props.theme.colors.quaternary};
+    padding: 0;
+    margin: 0;
   }
 `

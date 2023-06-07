@@ -1,4 +1,5 @@
 import { Header } from 'components/header'
+import { HowItWorks } from 'components/how-it-works'
 import { MainBanner } from 'components/main-banner'
 import Head from 'next/head'
 
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Header />
         <MainBanner />
+        <HowItWorks />
       </main>
     </>
   )

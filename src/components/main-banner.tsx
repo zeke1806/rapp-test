@@ -11,6 +11,13 @@ const MainBannerContainer = styled.div`
   height: 578px;
   padding-left: ${props => props.theme.spacer}px;
   padding-right: ${props => props.theme.spacer}px;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    position: relative;
+    height: 94vh;
+    background-image: url('/images/home-banner1-desktop.jpg');
+    background-position: center center;
+  }
 `
 
 const ContentContainer = styled.div`
@@ -22,6 +29,10 @@ const ContentContainer = styled.div`
   padding-bottom: ${props => props.theme.spacer * 2}px;
   margin-bottom: ${props => props.theme.spacer}px;
   border-radius: ${props => props.theme.radius}px;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    display: none;
+  }
 `
 
 const TextTitle = styled.p`
@@ -33,6 +44,13 @@ const TextTitle = styled.p`
 
 const MainBannerButton = styled(Button)`
   margin-bottom: ${props => props.theme.spacer}px;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    position: absolute;
+    bottom: 150px;
+    right: 150px;
+    width: 330px;
+  }
 `
 
 const TextContent = styled.p`

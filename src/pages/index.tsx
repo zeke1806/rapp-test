@@ -1,6 +1,9 @@
+import { DesignedFor } from 'components/designed-for'
+import { Faq } from 'components/faq'
 import { Header } from 'components/header'
 import { HowItWorks } from 'components/how-it-works'
 import { MainBanner } from 'components/main-banner'
+import { Mission } from 'components/mission'
 import Head from 'next/head'
 
 export default function Home() {
@@ -16,6 +19,9 @@ export default function Home() {
         <Header />
         <MainBanner />
         <HowItWorks />
+        <Mission />
+        <DesignedFor />
+        <Faq />
       </main>
     </>
   )

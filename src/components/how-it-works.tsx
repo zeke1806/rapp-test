@@ -20,9 +20,9 @@ const data = [
 ]
 
 const Container = styled.div`
-  padding-top: ${(props) => props.theme.padding}px;
-  padding-left: ${(props) => props.theme.padding}px;
-  padding-right: ${(props) => props.theme.padding}px;
+  padding-top: ${(props) => props.theme.spacer}px;
+  padding-left: ${(props) => props.theme.spacer}px;
+  padding-right: ${(props) => props.theme.spacer}px;
 `
 
 const ImageContainer = styled.div`
@@ -33,31 +33,30 @@ const ImageContainer = styled.div`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: ${(props) => props.theme.padding * 2}px;
+  margin-bottom: ${(props) => props.theme.spacer * 2}px;
 `
 
 const Text1 = styled.h2`
   text-align: center;
-  margin-top: ${props => props.theme.padding}px;
-  margin-bottom: ${props => props.theme.padding * 2}px;
+  margin-top: ${props => props.theme.spacer}px;
+  margin-bottom: ${props => props.theme.spacer * 2}px;
 `
 
 const Text2 = styled(BolderText)`
-  margin-bottom: ${props => props.theme.padding * 2}px;
+  margin-bottom: ${props => props.theme.spacer * 2}px;
 `
 
 const Text3 = styled.h2`
   font-weight: 600;
-  margin-bottom: ${props => props.theme.padding}px;
+  margin-bottom: ${props => props.theme.spacer}px;
 `
 
 const OrderedList = styled.ol`
   list-style-type: upper-alpha;
   padding-left: 30px;
-  margin-bottom: ${props => props.theme.padding}px;
-  color: ${props => props.theme.colors.quaternary};
+  margin-bottom: ${props => props.theme.spacer}px;
+  color: ${props => props.theme.colors.two};
   font-size: 24px;
-  font-weight: bold;
 `;
 
 const ListItem = styled.li`

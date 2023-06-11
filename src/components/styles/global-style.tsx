@@ -45,7 +45,7 @@ export const GlobalStyle = createGlobalStyle`
   h2 {
     font-size: 28px;
     font-weight: lighter;
-    color: ${props => props.theme.colors.quaternary};
+    color: ${props => props.theme.colors.two};
     padding: 0;
     margin: 0;
   }

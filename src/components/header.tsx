@@ -6,7 +6,7 @@ const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: ${props => props.theme.padding}px;
+  padding: ${props => props.theme.spacer}px;
 `
 
 const HumburgerContainer = styled.div``

@@ -9,18 +9,18 @@ const MainBannerContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   height: 578px;
-  padding-left: ${props => props.theme.padding}px;
-  padding-right: ${props => props.theme.padding}px;
+  padding-left: ${props => props.theme.spacer}px;
+  padding-right: ${props => props.theme.spacer}px;
 `
 
 const ContentContainer = styled.div`
   background-color: rgba(58, 58, 60, 0.38);
   box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.3);
-  padding-left: ${props => props.theme.padding}px;
-  padding-right: ${props => props.theme.padding}px;
-  padding-top: ${props => props.theme.padding}px;
-  padding-bottom: ${props => props.theme.padding * 2}px;
-  margin-bottom: ${props => props.theme.padding}px;
+  padding-left: ${props => props.theme.spacer}px;
+  padding-right: ${props => props.theme.spacer}px;
+  padding-top: ${props => props.theme.spacer}px;
+  padding-bottom: ${props => props.theme.spacer * 2}px;
+  margin-bottom: ${props => props.theme.spacer}px;
   border-radius: ${props => props.theme.radius}px;
 `
 
@@ -28,11 +28,11 @@ const TextTitle = styled.p`
   color: white;
   font-size: 32px;
   line-height: 45px;
-  margin-bottom: ${props => props.theme.padding}px;
+  margin-bottom: ${props => props.theme.spacer}px;
 `
 
 const MainBannerButton = styled(Button)`
-  margin-bottom: ${props => props.theme.padding}px;
+  margin-bottom: ${props => props.theme.spacer}px;
 `
 
 const TextContent = styled.p`

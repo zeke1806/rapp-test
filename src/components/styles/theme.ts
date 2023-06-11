@@ -2,9 +2,10 @@ export const THEME = {
   colors: {
     primary: '#85C5B9',
     secondary: '#F09291',
-    tertiary: '#535353',
-    quaternary: '#47929C'
+    one: '#535353',
+    two: '#47929C',
+    three: '#C4C4C4'
   },
-  padding: 12.5,
+  spacer: 12.5,
   radius: 10
 }

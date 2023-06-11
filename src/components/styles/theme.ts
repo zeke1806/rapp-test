@@ -6,6 +6,6 @@ export const THEME = {
     two: '#47929C',
     three: '#C4C4C4'
   },
-  spacer: 12.5,
+  spacer: 15,
   radius: 10
 }

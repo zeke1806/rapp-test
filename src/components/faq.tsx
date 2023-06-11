@@ -33,6 +33,7 @@ const Container = styled.div`
 
 const Title = styled.h2`
   text-align: center;
+  margin-bottom: ${props => props.theme.spacer * 2}px;
 `
 
 const FaqItemListContainer = styled.div`
@@ -47,13 +48,15 @@ const FaqItemTitle = styled.p`
   color: ${props => props.theme.colors.two};
   padding-bottom: ${props => props.theme.spacer}px;
   padding-top: ${props => props.theme.spacer}px;
+  margin-bottom: ${props => props.theme.spacer}px;
+  margin-top: ${props => props.theme.spacer * 2}px;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `
 
-const FaqArrow = styled.div`
+const FaqArrow = styled.span`
   width: 0;
   height: 0;
   border-left: 10px solid transparent;

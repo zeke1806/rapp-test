@@ -38,7 +38,7 @@ const TextContainer = styled.div`
 
 const Text1 = styled.h2`
   text-align: center;
-  margin-top: ${props => props.theme.spacer}px;
+  margin-top: ${props => props.theme.spacer * 2}px;
   margin-bottom: ${props => props.theme.spacer * 2}px;
 `
 
@@ -48,13 +48,13 @@ const Text2 = styled(BolderText)`
 
 const Text3 = styled.h2`
   font-weight: 600;
-  margin-bottom: ${props => props.theme.spacer}px;
+  margin-bottom: ${props => props.theme.spacer * 2}px;
 `
 
 const OrderedList = styled.ol`
   list-style-type: upper-alpha;
   padding-left: 30px;
-  margin-bottom: ${props => props.theme.spacer}px;
+  margin-bottom: ${props => props.theme.spacer * 2}px;
   color: ${props => props.theme.colors.two};
   font-size: 24px;
 `;

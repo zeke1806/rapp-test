@@ -36,9 +36,9 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'MarkOT-Regular';
   }
 
-  p, span {
+  p, span, a {
     margin: 0;
-    padding: 0;
+    padding: 0 !important;
     font-size: 16px;
   }
 

@@ -19,15 +19,15 @@ const ImageContainer = styled.div`
 `
 
 const Title = styled.h2`
-  margin-bottom: ${props => props.theme.spacer}px;
+  margin-bottom: ${props => props.theme.spacer * 2}px;
 `
 
 const Content = styled(LighterText)`
-  margin-bottom: ${props => props.theme.spacer}px;
+  margin-bottom: ${props => props.theme.spacer * 2}px;
 `
 
 const ButtonWithSpace = styled(Button)`
-  margin-bottom: ${props => props.theme.spacer}px;
+  margin-bottom: ${props => props.theme.spacer * 2}px;
 `
 
 interface Props {

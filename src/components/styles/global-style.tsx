@@ -49,4 +49,14 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    p, span, a {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 40px;
+    }
+  }
 `

@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Image from 'next/image'
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { BreakpointContext } from "./styles/use-breakpoint";
 
 interface DrawerProps {
   open: number;
@@ -24,6 +25,10 @@ const Drawer = styled.div<DrawerProps>`
   transition: 0.5s;
   text-align: center;
   white-space: nowrap;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    display: none;
+  }
 `
 
 const CloseBtn = styled.a`
@@ -37,6 +42,7 @@ const CloseBtn = styled.a`
 `
 
 const SignInBtnStyle = styled.button`
+  cursor: pointer;
   border: 0;
   padding: 0;
   margin-left: auto;
@@ -44,6 +50,10 @@ const SignInBtnStyle = styled.button`
   margin-bottom: ${props => props.theme.spacer * 3}px;
   background-color: transparent;
   color: white;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    margin: 0;
+  }
 `
 
 const HeaderContainer = styled.div`
@@ -54,26 +64,49 @@ const HeaderContainer = styled.div`
   padding: ${props => props.theme.spacer}px;
 `
 
-const HumburgerContainer = styled.div``
+const HumburgerContainer = styled.div`
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    display: none;
+  }
+`
 
 const LogoContainer = styled.div<LogoProps>`
-  justify-self: center;
   margin-left: auto;
   margin-right: auto;
   ${props => props.inDrawer && `
     margin-top: ${props.theme.spacer}px;
     margin-bottom: ${props.theme.spacer}px;
   `}
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    margin-left: initial;
+    margin-right: initial;
+  }
 `
 
-const NavContainer = styled.div``
+const NavContainer = styled.div`
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`
 
 const NavItem = styled.a`
+  cursor: pointer;
   display: block;
   color: white;
   text-align: left;
   margin-left: ${props => props.theme.spacer}px;
   margin-bottom: ${props => props.theme.spacer}px;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-left: ${props => props.theme.spacer}px !important;
+    padding-right: ${props => props.theme.spacer}px !important;
+  }
 `
 
 const Navigation = () => {
@@ -97,6 +130,7 @@ const Logo = (props: LogoProps) => {
 }
 
 export const Header = () => {
+  const breakpoint = useContext(BreakpointContext)
   const [open, setOpen] = useState(0);
 
   const handleOpen = () => {
@@ -118,5 +152,7 @@ export const Header = () => {
       <Image src="/icons/Hamburger.png" alt="hamburger" width={20} height={12} onClick={handleOpen} />
     </HumburgerContainer>
     <Logo />
+    {breakpoint === 'desktop' && <Navigation />}
+    {breakpoint === 'desktop' && <SignInBtn />}
   </HeaderContainer>
 }

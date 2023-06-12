@@ -3,6 +3,8 @@ import { BolderText } from "./styles/bolder-text"
 import { LighterText } from "./styles/ligher-text"
 import { Button } from "./button"
 import { MyImage, MyImageContainer } from "./styles/my-image"
+import { useContext } from "react"
+import { BreakpointContext } from "./styles/use-breakpoint"
 
 const data = [
   {
@@ -35,9 +37,11 @@ const Container = styled.div`
 const ImageContainer = styled(MyImageContainer)`
   height: 290px;
   width: 100%;
+  overflow: hidden;
 
   @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
     width: 50%;
+    height: 720px;
   }
 `
 
@@ -49,8 +53,8 @@ const TextContainer = styled.div`
   @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
     width: 50%;
     box-sizing: border-box;
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: ${props => props.theme.spacer * 11}px;
+    padding-right: ${props => props.theme.spacer * 11}px;
   }
 `
 
@@ -76,23 +80,28 @@ const Text3 = styled.h2`
 const OrderedList = styled.ol`
   list-style-type: upper-alpha;
   padding-left: 30px;
-  margin-bottom: ${props => props.theme.spacer * 2}px;
+  margin-bottom: ${props => props.theme.spacer}px;
   color: ${props => props.theme.colors.two};
   font-size: 24px;
 `;
 
 const ListItem = styled.li`
   margin-left: 0;
+  margin-bottom: ${props => props.theme.spacer}px;
 `;
 
 const HowItWorksBtn = styled(Button)`
-  align-self: center;
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    align-self: center;
+  }
 `
 
 export const HowItWorks = () => {
+  const breakpoint = useContext(BreakpointContext)
+  const imageUrl = breakpoint === 'desktop' ? '/images/how-it-works-desktop.jpg' : '/images/how-it-works-mobile.jpg'
   return <Container>
     <ImageContainer>
-      <MyImage src={'/images/how-it-works-mobile.jpg'} alt="how-it-works-mobile" />
+      <MyImage src={imageUrl} alt="how-it-works-mobile" />
     </ImageContainer>
     <TextContainer>
       <Text1>How it works</Text1>

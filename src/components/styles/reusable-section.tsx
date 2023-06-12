@@ -3,6 +3,7 @@ import Image from "next/image"
 import { LighterText } from "../styles/ligher-text"
 import { BolderText } from "../styles/bolder-text"
 import { Button } from "../button"
+import { MyImage, MyImageContainer } from "./my-image"
 
 const Container = styled.div`
   display: flex;
@@ -12,9 +13,9 @@ const Container = styled.div`
   text-align: left;
 `
 
-const ImageContainer = styled.div`
-  position: relative;
+const ImageContainer = styled(MyImageContainer)`
   height: 223px;
+  width: 100%;
   margin-bottom: ${props => props.theme.spacer * 2}px;
 `
 
@@ -42,7 +43,7 @@ interface Props {
 export const ReusableSection = (props: Props) => {
   return <Container>
     <ImageContainer>
-      <Image src={props.imgSrc} alt={props.imgAlt} style={{objectFit: 'cover'}} fill />
+      <MyImage src={props.imgSrc} alt={props.imgAlt} />
     </ImageContainer>
     <Title>{props.text1}</Title>
     <Content>

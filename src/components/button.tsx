@@ -12,5 +12,6 @@ export const Button = styled.button`
 
   @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
     font-size: 24px;
+    width: 330px;
   }
 `

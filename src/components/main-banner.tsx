@@ -49,7 +49,6 @@ const MainBannerButton = styled(Button)`
     position: absolute;
     bottom: 150px;
     right: 150px;
-    width: 330px;
   }
 `
 

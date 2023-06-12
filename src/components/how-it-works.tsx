@@ -1,8 +1,8 @@
-import Image from "next/image"
 import styled from "styled-components"
 import { BolderText } from "./styles/bolder-text"
 import { LighterText } from "./styles/ligher-text"
 import { Button } from "./button"
+import { MyImage, MyImageContainer } from "./styles/my-image"
 
 const data = [
   {
@@ -23,17 +23,35 @@ const Container = styled.div`
   padding-top: ${(props) => props.theme.spacer}px;
   padding-left: ${(props) => props.theme.spacer}px;
   padding-right: ${(props) => props.theme.spacer}px;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    display: flex;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
 `
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(MyImageContainer)`
   height: 290px;
-  position: relative;
+  width: 100%;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    width: 50%;
+  }
 `
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: ${(props) => props.theme.spacer * 2}px;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 150px;
+    padding-right: 150px;
+  }
 `
 
 const Text1 = styled.h2`
@@ -49,6 +67,10 @@ const Text2 = styled(BolderText)`
 const Text3 = styled.h2`
   font-weight: 600;
   margin-bottom: ${props => props.theme.spacer * 2}px;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    font-size: 28px;
+  }
 `
 
 const OrderedList = styled.ol`
@@ -63,10 +85,14 @@ const ListItem = styled.li`
   margin-left: 0;
 `;
 
+const HowItWorksBtn = styled(Button)`
+  align-self: center;
+`
+
 export const HowItWorks = () => {
   return <Container>
     <ImageContainer>
-      <Image src={'/images/how-it-works-mobile.jpg'} alt="how-it-works-mobile" style={{objectFit: 'cover'}} fill />
+      <MyImage src={'/images/how-it-works-mobile.jpg'} alt="how-it-works-mobile" />
     </ImageContainer>
     <TextContainer>
       <Text1>How it works</Text1>
@@ -82,7 +108,7 @@ export const HowItWorks = () => {
         )) }
       </OrderedList>
       <Text3>Zzzz your baby sleeps!</Text3>
-      <Button>GET STARTED</Button>
+      <HowItWorksBtn>GET STARTED</HowItWorksBtn>
     </TextContainer>
   </Container>
 }

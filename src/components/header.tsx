@@ -43,6 +43,7 @@ const CloseBtn = styled.a`
 
 const SignInBtnStyle = styled.button`
   cursor: pointer;
+  font-size: 16px;
   border: 0;
   padding: 0;
   margin-left: auto;
@@ -62,6 +63,11 @@ const HeaderContainer = styled.div`
   flex-direction: row;
   align-items: center;
   padding: ${props => props.theme.spacer}px;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    padding-left: ${props => props.theme.spacer * 4}px;
+    padding-right: ${props => props.theme.spacer * 4}px;
+  }
 `
 
 const HumburgerContainer = styled.div`
@@ -95,6 +101,7 @@ const NavContainer = styled.div`
 
 const NavItem = styled.a`
   cursor: pointer;
+  font-size: 16px;
   display: block;
   color: white;
   text-align: left;
@@ -119,13 +126,16 @@ const Navigation = () => {
 
 const SignInBtn = () => {
   return <SignInBtnStyle>
-    <p>SIGN IN or REGISTER</p>
+    SIGN IN or REGISTER
   </SignInBtnStyle>
 }
 
 const Logo = (props: LogoProps) => {
+  const breakpoint = useContext(BreakpointContext)
+  const width = breakpoint === 'desktop' ? 97.83 * 1.5 : 97.83;
+  const height = breakpoint === 'desktop' ? 22.81 * 1.5 : 22.81;
   return <LogoContainer {...props}>
-  <Image src="/icons/Logo.svg" alt="logo" width={97.83} height={22.81} />
+  <Image src="/icons/Logo.svg" alt="logo" width={width} height={height} />
 </LogoContainer>
 }
 

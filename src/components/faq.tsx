@@ -20,6 +20,24 @@ const FaqData: FaqItemProps[] = [
   },
   {
     title: 'Are there multiple sleep training methods to choose from?'
+  },
+  {
+    title: 'How long does it take for my baby’s sleep to improve?'
+  },
+  {
+    title: 'When can I start training my baby to sleep with the Lumi Smart Sleep Coach?'
+  },
+  {
+    title: 'Can I grant app access to other people who care for my baby?​'
+  },
+  {
+    title: 'Is it too late to sleep train my baby?'
+  },
+  {
+    title: 'How long will I have access?'
+  },
+  {
+    title: 'Can I cancel my plan?'
   }
 ]
 
@@ -29,6 +47,10 @@ const Container = styled.div`
   padding-left: ${(props) => props.theme.spacer}px;
   padding-right: ${(props) => props.theme.spacer}px;
   margin-bottom: ${(props) => props.theme.spacer * 5}px;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    padding-top: ${props => props.theme.spacer * 3}px;
+  }
 `
 
 const Title = styled.h2`
@@ -38,6 +60,11 @@ const Title = styled.h2`
 
 const FaqItemListContainer = styled.div`
   margin-bottom: ${(props) => props.theme.spacer * 2}px;
+
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    padding-left: ${props => props.theme.spacer * 40}px;
+    padding-right: ${props => props.theme.spacer * 40}px;
+  }
 `
 
 const FaqItemContainer = styled.div`
@@ -66,6 +93,12 @@ const FaqArrow = styled.span`
   transform: rotate(0deg);
 `
 
+const FaqButton = styled(Button)`
+  @media only screen and (min-width: ${props => props.theme.screen.desktop}px) {
+    align-self: center;
+  }
+`
+
 const FaqItem = (props: FaqItemProps) => {
   return <FaqItemContainer>
     <FaqItemTitle>
@@ -87,6 +120,6 @@ export const Faq = () => {
         ))
       }
     </FaqItemListContainer>
-    <Button>GET STARTED</Button>
+    <FaqButton>GET STARTED</FaqButton>
   </Container>
 }
